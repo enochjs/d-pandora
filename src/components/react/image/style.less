@@ -1,0 +1,101 @@
+.image-view-face {
+  width: 100%;
+}
+.image-view {
+  background-color: rgba(55, 55, 55, 0.6);
+  height: 100%;
+  left: 0px;
+  padding: 0 10px;
+  position: fixed;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+  z-index: 100000;
+}
+.image-view .image-container {
+  position: absolute;
+}
+.image-view .image-modal {
+  position: absolute;
+  overflow: hidden;
+  width: 580px;
+  height: 580px;
+  background: transparent;
+  left: calc( 50% - 290px );
+  top: calc( 50% - 290px );
+}
+.image-view .image-content {
+  position: absolute;
+  cursor: move;
+  width: 580px;
+}
+.image-view-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  margin-top: -60px;
+  max-width: 80px;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  height: 120px;
+  width: 16%;
+  z-index: 1001;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+.image-view-btn.close-btn {
+  right: 0;
+  top: 60px;
+}
+.image-view-btn.next-btn {
+  right: 0;
+}
+.image-view-btn.prev-btn {
+  left: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #ccc;
+  cursor: pointer;
+}
+.image-view-btn:hover {
+  color: #fff;
+}
+.image-view-btn.close-btn {
+  right: 0;
+  top: 60px;
+  font-size: 32px;
+}
+.image-view-btn.next-btn {
+  right: 40px;
+  font-size: 80px;
+  max-width: 100px;
+  font-weight: normal;
+}
+.image-view-btn.prev-btn {
+  left: 40px;
+  font-size: 80px;
+  max-width: 100px;
+  font-weight: normal;
+}
+.image-view-btn.anticlockwise-btn i{
+  transform: rotateY(180deg)
+}
+.image-view-toolbar {
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 100px);
+  z-index: 1001;
+}
+.image-view-toolbar .image-view-btn {
+  position: static;
+}
+
+.antd-tab-pane {
+  .ant-tabs-tab {
+      padding: 8px !important;
+  }
+}

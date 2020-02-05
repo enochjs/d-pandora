@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+	<meta charset="utf-8">
+	<title>点我达CRM</title>
+</head>
+<body>
+  <div class="root" id="super-batman-base"></div>
+  <div id="root"></div>
+	<script>
+		window.$GLOBALCONFIG = {};
+		+function(global){
+      global.CITIES = [
+        { "cityId":1, "cityName":"杭州市" },
+        { "cityId":2, "cityName":"南京市" },
+        { "cityId":3, "cityName":"上海市" },
+        { "cityId":4, "cityName":"武汉市" },
+        { "cityId":5, "cityName":"济南市" },
+        { "cityId":6, "cityName":"郑州市" },
+        { "cityId":7, "cityName":"长沙市" },
+        { "cityId":8, "cityName":"成都市" },
+        { "cityId":9, "cityName":"深圳市" },
+        { "cityId":10, "cityName":"西安市" },
+        { "cityId":11, "cityName":"重庆市" },
+        { "cityId":12, "cityName":"北京市" },
+        { "cityId":13, "cityName":"青岛市" },
+        { "cityId":14, "cityName":"天津市"},
+      ];
+
+      global.MYCITYLIST = [
+        { "cityId":1, "cityName":"杭州市" },
+        { "cityId":2, "cityName":"南京市" },
+        { "cityId":3, "cityName":"上海市" },
+        { "cityId":4, "cityName":"武汉市" },
+        { "cityId":5, "cityName":"济南市" },
+        { "cityId":6, "cityName":"郑州市" },
+        { "cityId":7, "cityName":"长沙市" },
+        { "cityId":8, "cityName":"成都市" },
+      ]
+      global.NAVIGATION = [
+        {
+          "id":600440100,
+          "name":"配送员管理",
+          "url":"",
+          "children":[
+            { "id":600440111, "name":"配送员详情", "url": "/rider/detail/1/1" },
+          ]
+        },
+      ];
+	  }(window.$GLOBALCONFIG);
+	</script>
+</body>
+</html>

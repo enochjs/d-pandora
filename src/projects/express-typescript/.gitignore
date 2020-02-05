@@ -1,0 +1,35 @@
+# build output
+dist
+
+# dependencies
+node_modules
+
+# logs
+npm-debug.log.*
+yarn-error.log
+*.log
+logs
+actionLogs
+
+# coverage
+.nyc_output
+coverage
+
+.DS_Store
+
+.javadoc
+
+# ~
+~/
+
+.project
+bin/
+
+monitorLogs/
+
+recordLogs/
+
+#heapdump
+heapdump-*.*
+# parse auto created pom
+pom_*.xml

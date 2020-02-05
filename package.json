@@ -1,0 +1,28 @@
+{
+  "name": "d-pandora",
+  "version": "1.0.0",
+  "description": "a tool for init a project",
+  "main": "index.js",
+  "bin": {
+    "d-pandora": "bin/index.js"
+  },
+  "scripts": {
+    "compile": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node bin/generate.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "commander": "^4.1.0",
+    "inquirer": "^7.0.3",
+    "ncp": "^2.0.0",
+    "ora": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/inquirer": "^6.5.0",
+    "@types/ncp": "^2.0.3",
+    "@types/node": "^13.1.6"
+  }
+}

@@ -1,0 +1,13 @@
+# node_modules
+node_modules
+
+# log
+.log*
+*.log
+logs
+
+# vscode 
+.vscode
+
+# dist
+dist

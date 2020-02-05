@@ -1,0 +1,569 @@
+{
+  "amap": {
+    "prefix": "@amap",
+    "body": [
+      "<Map",
+      "  id=\"mapContainer\"",
+      "  ref={mapRef}",
+      "  style={{ height: '400px', display: 'none' }}",
+      "  options={{ zoom: 14 }}",
+      "  events={{ complete: handleMapComplete }}",
+      "/>"
+    ],
+    "description": "amap"
+  },
+  "amap-complete": {
+    "prefix": "@amap-complete",
+    "body": [
+      "function handleMapComplete () {",
+      "  mapRef?.current.loadAMapPromise.then(() => {",
+      "    // todo",
+      "  })",
+      "}"
+    ],
+    "description": "amap"
+  },
+  "authWrapper": {
+    "prefix": "@authWrapper",
+    "body": [
+      "<AuthWrapper authCode=\"${value}\">",
+      "${content}",
+      "</AuthWrapper>"
+    ],
+    "description": "dwa-authWrapper"
+  },
+  "collapsible": {
+    "prefix": "@collapsible",
+    "body": [
+      "<Collapsible",
+      "  list={${options}}",
+      "  render={(item, index) => (",
+      "    null",
+      "  )}",
+      "/>"
+    ],
+    "description": "dwa-collapsible"
+  },
+  "colorTag": {
+    "prefix": "@colorTag",
+    "body": [
+      "<ColorTag className=\"${className}\" type={${type}}>{${content}}</ColorTag>"
+    ],
+    "description": "dwa-colorTag"
+  },
+  "message": {
+    "prefix": "@message",
+    "body": [
+      "<Message cityId={${cityId}} id={${riderId}} mobile={${mobile}} type={${type}} name={${name}} />"
+    ],
+    "description": "dwa-message"
+  },
+  "mobile": {
+    "prefix": "@mobile",
+    "body": [
+      "<Mobile cityId={${cityId}} id={${riderId}} mobile={${mobile}} type={${type}} />"
+    ],
+    "description": "mobile"
+  },
+  "notice": {
+    "prefix": "@notice",
+    "body": [
+      "<Notice cityId={${cityId}} id={${riderId}} />"
+    ],
+    "description": "notice"
+  },
+  "extendTab": {
+    "prefix": "@extendTab",
+    "body": [
+      "<Tab tabs={tabs} defaultActiveKey=\"basic\" id={${value}} />"
+    ]
+  },
+  "extendTab-tabs": {
+    "prefix": "@extendTab-tabs",
+    "body": [
+      "const tabs = [",
+      "  { key: 'basic', label: '基本信息', hide: false },",
+      "  { key: 'order', label: '订单', hide: false },",
+      "  { key: 'workorder', label: '工单', hide: false },",
+      "  { key: 'account', label: '账户', hide: false },",
+      "  { key: 'violation', label: '违规事件', hide: false },",
+      "  { key: 'workRecord', label: '工作记录', hide: false },",
+      "  {",
+      "    key: 'more',",
+      "    label: '更多',",
+      "    children: [",
+      "      { key: 'grade', label: '等级信息', hide: false },",
+      "      { key: 'evaluate', label: '用户评价', hide: false },",
+      "      { key: 'store', label: '商城记录', hide: false },",
+      "      { key: 'inshop', label: '驻店记录', hide: false },",
+      "      { key: 'message', label: '消息记录', hide: false },",
+      "    ],",
+      "  },",
+      "]"
+    ]
+  },
+  "form-text-item": {
+    "prefix": "@ftext",
+    "body": [
+      "<InputItem",
+      "  id={${id}}",
+      "  labelCol={${labelCol}}",
+      "  wrapperCol={${wrapperCol}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  rules={${rules}}",
+      "  placeholder={${placeholder}}",
+      "/>"
+    ],
+    "description": "dwd-form-text-item"
+  },
+  "form-select-item": {
+    "prefix": "@fselect",
+    "body": [
+      "<SelectItem",
+      "  id={${id}}",
+      "  labelCol={${labelCol}}",
+      "  wrapperCol={${wrapperCol}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  rules={${rules}}",
+      "  options={${options}}",
+      "  allowClear={${allowClear}}",
+      "  optionValueKey={${optionValueKey}}",
+      "  optionLabelKey={${optionLabelKey}}",
+      "/>",
+      ""
+    ],
+    "description": "dwd-form-select-item"
+  },
+  "form-cascader-item": {
+    "prefix": "@fcascader",
+    "body": [
+      "<CascaderItem",
+      "  id={${id}}",
+      "  labelCol={${labelCol}}",
+      "  wrapperCol={${wrapperCol}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  rules={${rules}}",
+      "  options={${options}}",
+      "  allowClear={${allowClear}}",
+      "  onChange={${onChange}}",
+      "/>"
+    ],
+    "description": "dwd-form-cascader-item"
+  },
+  "form-datapicker-item": {
+    "prefix": "@fdatapicker",
+    "body": [
+      "<DatePickerItem",
+      "  format={item.format}",
+      "  id={${id}}",
+      "  labelCol={${labelCol}}",
+      "  wrapperCol={${wrapperCol}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  rules={${rules}}",
+      "  showTime={${showTime}}",
+      "/>"
+    ],
+    "description": "description"
+  },
+  "form-rangerPicker-item": {
+    "prefix": "@frangerpicker",
+    "body": [
+      "<RangePickerItem",
+      "  format={${format}}",
+      "  showTime={${showTime}}",
+      "  id={${id}}",
+      "  labelCol={${labelCol}}",
+      "  wrapperCol={${wrapperCol}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  rules={${rules}}",
+      "  placeholder={${placeholder}}",
+      "/>"
+    ],
+    "description": "description"
+  },
+  "form-userSelect-item": {
+    "prefix": "@fuserselect",
+    "body": [
+      "<UserSelectItem",
+      "  id={${id}}",
+      "  cityId={${cityId}}",
+      "  type={${searchType}}",
+      "  labelCol={${labelCol}}",
+      "  wrapperCol={${wrapperCol}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  rules={${rules}}",
+      "/>"
+    ],
+    "description": "description"
+  },
+  "form-classify-select-item": {
+    "prefix": "@fclassifyselect",
+    "body": [
+      "<ClassifySelectItem",
+      "  id={${id}}",
+      "  labelCol={${labelCol}}",
+      "  wrapperCol={${wrapperCol}}",
+      "  mode={${mode}}",
+      "  classifys={${options}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  rules={${rules}}",
+      "  allowClear={${allowClear}}",
+      "/>"
+    ],
+    "description": "description"
+  },
+  "form-platform-select-item": {
+    "prefix": "@fplatformselect",
+    "body": [
+      "<PlatformSelectItem",
+      "  id={${id}}",
+      "  labelCol={${labelCol}}",
+      "  wrapperCol={${wrapperCol}}",
+      "  mode={${mode}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  rules={${rules}}",
+      "  allowClear={${allowClear}}",
+      "/>"
+    ],
+    "description": "description"
+  },
+  "form-city-select-item": {
+    "prefix": "@fcityselect",
+    "body": [
+      "<CitySelectItem",
+      "  id={${id}}",
+      "  type={${type}}",
+      "  labelCol={${labelCol}}",
+      "  wrapperCol={${wrapperCol}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  rules={${rules}}",
+      "  onChange={${onChange}}",
+      "  allowClear={${allowClear}}",
+      "/>"
+    ],
+    "description": "description"
+  },
+  "form-checkbox-item": {
+    "prefix": "@fcheckbox",
+    "body": [
+      "<CheckboxItem",
+      "  id=\"checkboxItem\"",
+      "  formItemLabel=\"CheckboxItem\"",
+      "  labelCol={7}",
+      "/>"
+    ],
+    "description": "description"
+  },
+  "form-radio-item": {
+    "prefix": "@fradio",
+    "body": [
+      "<RadioItem",
+      "  id={${id}}",
+      "  rules={${rules}}",
+      "  optionValueKey={${optionValueKey}}",
+      "  optionLabelKey={${optionLabelKey}}",
+      "  options={${options}}",
+      "  formItemLabel={${formItemLabel}}",
+      "  labelCol={${labelCol}}",
+      "/>"
+    ],
+    "description": "description"
+  },
+  "Icon": {
+    "prefix": "@icon",
+    "body": [
+      "<Icon type=\"${value}\" />"
+    ],
+    "description": "dwa-icon"
+  },
+  "modal": {
+    "prefix": "@modal",
+    "body": [
+      "import React, { useState, useImperativeHandle, forwardRef } from 'react'",
+      "import { Modal } from 'antd'",
+      "",
+      "export interface ModalHandles {",
+      "  show(): void;",
+      "}",
+      "",
+      "interface Iprops {",
+      "  riderId: string;",
+      "  cityId: string;",
+      "  afterClose?: () => void;",
+      "}",
+      "",
+      "function ${modal} (props: Iprops, ref: React.Ref<ModalHandles>) {",
+      "  const { afterClose } = props",
+      "  const [visible, setVisible] = useState(false)",
+      "",
+      "  useImperativeHandle(ref, () => ({",
+      "    show () {",
+      "      setVisible(true)",
+      "      // todo",
+      "    },",
+      "  }))",
+      "",
+      "  function handleSave () {",
+      "    // todo",
+      "    setVisible(false)",
+      "  }",
+      "",
+      "  function handleCancel () {",
+      "    setVisible(false)",
+      "  }",
+      "",
+      "  return (",
+      "    <Modal",
+      "      className=\"${className}\"",
+      "      title=\"${title}\"",
+      "      visible={visible}",
+      "      onCancel={handleCancel}",
+      "      onOk={handleSave}",
+      "      width={600}",
+      "      closable={false}",
+      "      afterClose={afterClose}",
+      "    >",
+      "      { /** todo */ }",
+      "    </Modal>",
+      "  )",
+      "}",
+      "",
+      "export default forwardRef(${modal})",
+      ""
+    ],
+    "description": "dwa-modal"
+  },
+  "popover-modal": {
+    "prefix": "@popovermodal",
+    "body": [
+      "import React, { useState, useRef } from 'react'",
+      "import { debounce } from 'lodash-es'",
+      "import Form, { FormHandles, SelectItem, InputItem } from 'components/form'",
+      "import PopoverModal from 'components/modal/popover'",
+      "import { fetchRiderGradeActiveModify } from 'api/grade'",
+      "",
+      "interface Iprops {",
+      "  cityId: string;",
+      "  riderId: string;",
+      "  afterClose?: () => void;",
+      "}",
+      "",
+      "export default function ${name} (props: Iprops) {",
+      "  const [visible, setVisible] = useState<boolean>(false)",
+      "  const formRef = useRef<FormHandles>(null)",
+      "",
+      "  function handleSavle () {",
+      "    formRef.current?.validate(async (error, values) => {",
+      "      if (error) {",
+      "        return",
+      "      }",
+      "      const result = await fetchRiderGradeActiveModify({",
+      "        cityId: props.cityId,",
+      "        riderId: props.riderId,",
+      "        score: values.type * values.score,",
+      "        businessName: values.reason,",
+      "      })",
+      "      if (result) {",
+      "        setVisible(false)",
+      "        setTimeout(() => {",
+      "          props.afterClose && props.afterClose()",
+      "        }, 100)",
+      "      }",
+      "    })",
+      "  }",
+      "",
+      "  return (",
+      "    <PopoverModal",
+      "      visible={visible}",
+      "      onOk={debounce(handleSavle, 200)}",
+      "      onCancel={() => setVisible(false)}",
+      "      onVisibleChange={setVisible}",
+      "      width={400}",
+      "    >",
+      "      <div>",
+      "        <Form wrappedComponentRef={formRef}>",
+      "          <SelectItem",
+      "            id=\"type\"",
+      "            initialValue={1}",
+      "            rules={[{ required: true }]}",
+      "            optionValueKey=\"code\"",
+      "            optionLabelKey=\"mean\"",
+      "            options={[{ code: 1, mean: '调增' }, { code: -1, mean: '调减' }]}",
+      "            formItemLabel=\"人工调整类型\"",
+      "            labelCol={7}",
+      "          />",
+      "          <InputItem",
+      "            id=\"score\"",
+      "            formItemLabel=\"分值\"",
+      "            labelCol={7}",
+      "          />",
+      "          <InputItem",
+      "            id=\"reason\"",
+      "            formItemLabel=\"调整原因\"",
+      "            labelCol={7}",
+      "          />",
+      "        </Form>",
+      "      </div>",
+      "    </PopoverModal>",
+      "  )",
+      "}",
+      ""
+    ],
+    "description": "description"
+  },
+  "SearchForm": {
+    "prefix": "@sf",
+    "body": [
+      "<SearchForm",
+      "  formColumns={getFormColumns()}",
+      "  formValue={state.formValue}",
+      "  formFieldChange={actions.formFieldChange}",
+      "  onSearch={handleSubmit}",
+      "/>"
+    ]
+  },
+  "SearchForm-getFormColumns": {
+    "prefix": "@sfcolumns",
+    "body": [
+      "function getFormColumns () {",
+      "  const formColumns: IFormColumnValue[] = [${value}]",
+      "  return formColumns",
+      "}"
+    ],
+    "description": "getFormColumns"
+  },
+  "SearchForm-colums-text": {
+    "prefix": "@sfctext",
+    "body": [
+      "{",
+      "  type: 'text',",
+      "  id: 'shopId',",
+      "  formItemLabel: 'ID',",
+      "  span: 6,",
+      "},"
+    ],
+    "description": "searchformColumns"
+  },
+  "SearchForm-colums-select": {
+    "prefix": "@sfcselect",
+    "body": [
+      "{",
+      "  type: 'select',",
+      "  id: 'status',",
+      "  formItemLabel: '状态',",
+      "  options: [{ code: 1, mean: 'a' }, { code: 2, mean: 'b' }],",
+      "  optionLabelKey: 'mean',",
+      "  optionValueKey: 'code',",
+      "  span: 6,",
+      "},"
+    ],
+    "description": "searchformColumns"
+  },
+  "SearchForm-colums-rangePicker": {
+    "prefix": "@sfcrangePicker",
+    "body": [
+      "{",
+      "  type: 'rangePicker',",
+      "  id: ['start', 'end'],",
+      "  formItemLabel: '日期',",
+      "  allowClear: true,",
+      "  span: 12,",
+      "},"
+    ],
+    "description": "searchformColumns"
+  },
+  "SearchForm-colums-userSearch": {
+    "prefix": "@sfcuserSearch",
+    "body": [
+      "{",
+      "  type: 'userSearch',",
+      "  id: 'userSearch',",
+      "  cityId: '1',",
+      "  searchType: 'staff',",
+      "  formItemLabel: '员工',",
+      "  allowClear: true,",
+      "  span: 6,",
+      "},"
+    ],
+    "description": "searchformColumns"
+  },
+  "search-table": {
+    "prefix": "@searchtable",
+    "body": [
+      "",
+      "import React, { useState } from 'react'",
+      "import { Table } from 'antd'",
+      "import { ColumnProps } from 'antd/lib/table'",
+      "import {",
+      "  SearchForm,",
+      "  IFormColumnValue,",
+      "} from 'components/form'",
+      "import commonStore from 'store/common'",
+      "import searchTableStore from './store'",
+      "",
+      "interface Iprops {",
+      "  cityId: string;",
+      "  riderId: string;",
+      "}",
+      "",
+      "export default function SearchTable (props: Iprops) {",
+      "  const [state, actions] = searchTableStore.useStore()",
+      "  const [type, setType] = useState<'now' | 'his'>('now')",
+      "  const [{ BUSINESS_TYPE, MYCITYLIST, ORDER_TYPE_LIST, ORDERSTATUS, ORDER_PAID_LIST_FROND, DISPATCHMODELIST }] = commonStore.useStore()",
+      "",
+      "  function handleSubmit () {",
+      "    query(1)",
+      "  }",
+      "",
+      "  function onPageChange (current: number) {",
+      "    query(current)",
+      "  }",
+      "",
+      "  function query (current) {",
+      "    actions.fetchTableData({ ...state.formValue, currentPage: current || state.tableData.currentPage }, type)",
+      "  }",
+      "",
+      "  function getColumns () {",
+      "    const talbeColumns: ColumnProps<any>[] = [",
+      "    ]",
+      "    return talbeColumns",
+      "  }",
+      "",
+      "  function getFormColumns () {",
+      "    const formColumns: IFormColumnValue[] = [",
+      "    ]",
+      "    return formColumns",
+      "  }",
+      "",
+      "  return (",
+      "    <div className=\"search-panel flex-container\">",
+      "      <SearchForm",
+      "        formColumns={getFormColumns()}",
+      "        formValue={state.formValue}",
+      "        formFieldChange={actions.formFieldChange}",
+      "        onSearch={handleSubmit}",
+      "      />",
+      "      <Table",
+      "        loading={state.tableLoading}",
+      "        columns={getColumns()}",
+      "        dataSource={state.tableData.list}",
+      "        bordered={bordered}",
+      "        rowKey=\"rowKey\"",
+      "        size=\"small\"",
+      "        scroll={{ x: 2000 }}",
+      "        pagination={{",
+      "          onChange: onPageChange,",
+      "          pageSize: state.tableData.pageSize,",
+      "          total: state.tableData.totalCount,",
+      "          current: state.tableData.currentPage,",
+      "        }}",
+      "      />",
+      "    </div>",
+      "  )",
+      "}",
+      "",
+      ""
+    ],
+    "description": "description"
+  }
+}

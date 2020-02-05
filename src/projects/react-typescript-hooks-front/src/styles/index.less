@@ -1,0 +1,26 @@
+.root-content {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+  .layout-spinning {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    top: 40%;
+  }
+  .flex-panel {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color: #F2F2F2;
+    .flex-container {
+      display: flex;
+      padding: 0 16px;
+      height: inherit;
+      flex-direction: column;
+      overflow: auto;
+    }
+  }
+}

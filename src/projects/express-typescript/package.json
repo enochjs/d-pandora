@@ -1,0 +1,84 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "templateName": "react+express+typescript",
+  "scripts": {
+    "compile": "tsc -w -p .",
+    "start": "NODE_ENV=localdev nodemon dist/index.js",
+    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "precommit-msg": "echo Pre-commit checking...please wait && exit 0"
+  },
+  "devDependencies": {
+    "@types/compression": "^1.0.1",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.1",
+    "@types/jsonwebtoken": "^8.3.5",
+    "@types/lodash-es": "^4.17.3",
+    "@types/multer": "^1.3.10",
+    "@types/node": "^12.7.5",
+    "@types/node-xlsx": "^0.12.1",
+    "@types/reflect-metadata": "^0.1.0",
+    "@types/uuid": "^3.4.5",
+    "@typescript-eslint/eslint-plugin": "^2.7.0",
+    "@typescript-eslint/parser": "^2.7.0",
+    "eslint": "^6.6.0",
+    "ghooks": "^2.0.4",
+    "module-alias": "^2.2.1",
+    "nodemon": "^1.19.2",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "inversify": "^5.0.1",
+    "inversify-binding-decorators": "^4.0.0",
+    "inversify-inject-decorators": "^3.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.15",
+    "moment": "^2.24.0",
+    "multer": "^1.4.2",
+    "node-xlsx": "^0.15.0",
+    "reflect-metadata": "^0.1.13",
+    "uuid": "^3.3.3",
+    "winston": "^3.2.1"
+  },
+  "_moduleAliases": {
+    "config": "dist/config",
+    "controller": "dist/controller",
+    "inversifyExpress": "dist/inversifyExpress",
+    "middlewares": "dist/middlewares",
+    "service": "dist/service",
+    "utils": "dist/utils"
+  },
+  "config": {
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100,
+      "subjectPattern": ".+",
+      "subjectPatternErrorMsg": "subject does not match subject pattern!",
+      "helpMessage": ""
+    },
+    "ghooks": {
+      "pre-commit": "npm run precommit-msg && npm run lint",
+      "commit-msg": "validate-commit-msg"
+    }
+  }
+}
