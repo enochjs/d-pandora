@@ -4,10 +4,10 @@
 - npm link
 
 ## install a project
-- orange init
+- d-pandora init
 
 ## copy a component or pages
-- orange copy
+- d-pandora copy
 
 ## generate template
 - npm run generate
