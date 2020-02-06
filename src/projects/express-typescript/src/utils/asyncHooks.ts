@@ -6,6 +6,7 @@ import fs from 'fs'
 // async_hooks 日志打印不能用console.log 因为console.log 也是异步操作，会触发死循环
 // eslint-disable-next-line
 function print(format: any, ...args: any[]) {
+  // eslint-disable-next-line
   fs.writeSync(1, `${util.format(format, ...args)}\n`)
 }
 

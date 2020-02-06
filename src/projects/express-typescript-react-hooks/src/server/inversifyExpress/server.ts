@@ -14,7 +14,7 @@ export default class InversifyExpressServer {
 
   private logger: Logger
 
-  public constructor(
+  public constructor (
     customApp?: express.Application,
   ) {
     this.container = container
@@ -23,13 +23,13 @@ export default class InversifyExpressServer {
     this.logger = container.get<Logger>('Logger')
   }
 
-  public build(): express.Application {
+  public build (): express.Application {
     this.container.load(buildProviderModule())
     this.registerControllers()
     return this.app
   }
 
-  private registerControllers() {
+  private registerControllers () {
     const controllers: interfaces.Controller[] = this.container.getAll<interfaces.Controller>(TYPE.Controller)
     controllers.forEach((controller: interfaces.Controller) => {
       const controllerMetadata: interfaces.ControllerMetadata = Reflect.getMetadata(METADATA_KEY.controller, controller.constructor)
@@ -55,7 +55,7 @@ export default class InversifyExpressServer {
     this.app.use(this.router)
   }
 
-  private handlerFactory(controllerName: string, methodName: string, parameterMetadata: interfaces.ParameterMetadata[]): express.RequestHandler {
+  private handlerFactory (controllerName: string, methodName: string, parameterMetadata: interfaces.ParameterMetadata[]): express.RequestHandler {
     return async (req, res, next) => {
       const controller: any = this.container.getNamed(TYPE.Controller, controllerName)
 
@@ -94,7 +94,7 @@ export default class InversifyExpressServer {
     }
   }
 
-  private extractParameters(req: express.Request, res: express.Response, next: express.RequestHandler, params: interfaces.ParameterMetadata[]) {
+  private extractParameters (req: express.Request, res: express.Response, next: express.RequestHandler, params: interfaces.ParameterMetadata[]) {
     const args = []
     if (!params || !params.length) {
       return [req, res, next]
@@ -117,7 +117,7 @@ export default class InversifyExpressServer {
     return args
   }
 
-  private getParam(source: any, paramType: string | null, name: string) {
+  private getParam (source: any, paramType: string | null, name: string) {
     const param = paramType && source[paramType] ? source[paramType] : source
     return param[name]
   }

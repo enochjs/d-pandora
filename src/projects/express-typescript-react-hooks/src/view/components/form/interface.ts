@@ -8,7 +8,6 @@ import { CheckboxProps } from 'antd/es/checkbox'
 import { TreeSelectProps } from 'antd/es/tree-select'
 import { DatePickerProps, RangePickerProps } from 'antd/es/date-picker/interface'
 import { UploadImageProps } from 'components/upload/image'
-import { BraftEditorProps } from 'braft-editor'
 
 export interface FormProps extends FormComponentProps {
   className?: string;
@@ -120,14 +119,7 @@ export interface FormHandles {
   clear(): void;
 }
 
-export interface ClassifySelectItemProps extends ClassifySelectProps, FormItemProps {
-  id: string;
-}
 
 export interface UploadImageItemProps extends UploadImageProps, FormItemProps {
-  id: string;
-}
-
-export interface BraftEditorItemProps extends FormItemProps, BraftEditorProps {
   id: string;
 }

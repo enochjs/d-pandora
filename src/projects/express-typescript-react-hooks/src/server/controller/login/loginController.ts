@@ -24,7 +24,7 @@ export default class LoginController {
 
   @Post('api/login')
   @ResponseBody
-  public async login(
+  public async login (
     @RequestBody('username') username: string,
     @RequestBody('password') password: string,
   ): Promise<string> {

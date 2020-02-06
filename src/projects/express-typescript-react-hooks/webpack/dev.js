@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 const tsImportPluginFactory = require('ts-import-plugin')
 const version = require('../package.json').version
 
@@ -11,11 +10,10 @@ module.exports = {
     patch: 'react-hot-loader/patch',
     server: 'webpack-dev-server/client?http://127.0.0.1:3001',
     main: path.resolve(__dirname, '../src/view/index.tsx'),
-    login: path.resolve(__dirname, '../src/view/pages/login/index.tsx'),
   },
   output: {
-    path: path.resolve(__dirname, 'build'),
-    filename: `${version}-[name].js`,
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
     publicPath: 'http://127.0.0.1:3001/',
     hotUpdateMainFilename: '__hmr/[hash].hot-update.json',
     hotUpdateChunkFilename: '__hmr/[id].[hash].hot-update.js'
@@ -69,12 +67,10 @@ module.exports = {
       components: path.resolve(__dirname, '../src/view/components'),
       utils: path.resolve(__dirname, '../src/view/utils'),
       api: path.resolve(__dirname, '../src/view/api'),
+      store: path.resolve(__dirname, '../src/view/store'),
     }
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../src/view/index.html'),
-    }),
     new webpack.IgnorePlugin({
       resourceRegExp: /^\.\/locale$/,
       contextRegExp: /moment$/
@@ -83,7 +79,7 @@ module.exports = {
   ],
   devtool: 'source-map',
   devServer: {
-    contentBase: './build/',
+    contentBase: './dist/',
     historyApiFallback: true,
     hotOnly: true,
     host: '127.0.0.1',

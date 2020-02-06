@@ -38,4 +38,5 @@ app.use(html)
 
 serverInstance.listen(config.port)
 
+// eslint-disable-next-line
 console.log(`Server started on port ${config.port} :)`)

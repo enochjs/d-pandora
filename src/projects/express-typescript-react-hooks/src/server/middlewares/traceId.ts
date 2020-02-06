@@ -4,7 +4,7 @@ import { v4 } from 'uuid'
 import { Logger } from 'winston'
 import { asyncHooks } from 'utils/asyncHooks'
 
-export default async function traceId(req: express.Request, res: express.Response, next: express.NextFunction) {
+export default async function traceId (req: express.Request, res: express.Response, next: express.NextFunction) {
   const logger = container.get<Logger>('Logger')
   const id = v4()
   try {

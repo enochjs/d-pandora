@@ -8,7 +8,7 @@ const { version } = require('../../package.json')
 
 const config = container.get<Config>('Config')
 
-export default function html(req: express.Request, res: express.Response, next: express.NextFunction) {
+export default function html (req: express.Request, res: express.Response, next: express.NextFunction) {
   if (req.path.startsWith('/api')) {
     next()
     return

@@ -19,21 +19,21 @@ interface FormValue {
 const LOGIN_FORM_STORAGE_KEY = 'login-form-storage'
 // let PROJECTNAME_TOKEN = ''
 
-function Login(): JSX.Element {
+function Login (): JSX.Element {
   const storage = localStorage.getItem('login-form-storage')
 
   const storageJson = storage ? JSON.stringify(storage) as any : { username: '', password: '' }
 
   const [formValue, setFormValue]: [FormValue, React.Dispatch<React.SetStateAction<FormValue>>] = useState(storageJson)
 
-  function formFieldChange(value: any): void {
+  function formFieldChange (value: any): void {
     setFormValue({
       ...formValue,
       ...value,
     })
   }
 
-  async function handleLogin(): Promise<void> {
+  async function handleLogin (): Promise<void> {
     if (formValue.remember) {
       localStorage.setItem(LOGIN_FORM_STORAGE_KEY, JSON.stringify({
         username: formValue.username,

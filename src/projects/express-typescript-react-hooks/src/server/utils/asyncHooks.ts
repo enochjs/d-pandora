@@ -24,7 +24,7 @@ export default class AsyncHooks {
   // context map <asyncId, contest>, to find context with current asyncId
   private contexts: Map<number, Context> = new Map()
 
-  public constructor() {
+  public constructor () {
     hooks.createHook({
       init: (asyncId) => {
         if (this.context) {
@@ -48,7 +48,7 @@ export default class AsyncHooks {
     }).enable()
   }
 
-  public set(key: string, value: any) {
+  public set (key: string, value: any) {
     currentCtxId = hooks.executionAsyncId()
     const ctx = {
       id: currentCtxId,
@@ -57,7 +57,7 @@ export default class AsyncHooks {
     this.context = ctx
   }
 
-  public get(key: string) {
+  public get (key: string) {
     return this.context[key]
   }
 }

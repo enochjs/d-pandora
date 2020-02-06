@@ -22,7 +22,7 @@ export default class UserController {
 
   @Get('api/user/list')
   @ResponseBody
-  public async getUserList(
+  public async getUserList (
     @QueryParam('id') id: number,
   ): Promise<any> {
     this.UserService.getUserList(id)
@@ -53,7 +53,7 @@ export default class UserController {
    */
   @Post('api/user/upload', multer().any())
   @ResponseBody
-  public async userUpload(
+  public async userUpload (
     @Request('files') files: { buffer: ArrayBuffer }[],
   ) {
     const file = files[0]
@@ -95,7 +95,7 @@ export default class UserController {
   }
 
   @Get('api/user/list/export')
-  public async exportUserList(
+  public async exportUserList (
     @Response() res: express.Response,
   ) {
     const columns = [

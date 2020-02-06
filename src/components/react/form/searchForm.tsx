@@ -3,7 +3,7 @@ import { Form, Row, Col, Button } from 'antd'
 import moment from 'moment'
 import { cloneDeep } from 'lodash'
 import FormContext from './formContext'
-import { InputItem, SelectItem, RangePickerItem, DatePickerItem, UserSelectItem, CascaderItem, CitySelectItem, PlatformSelectItem } from './index'
+import { InputItem, SelectItem, RangePickerItem, DatePickerItem, CascaderItem } from './index'
 import { SearchFormProps, IFormColumnValue } from './interface'
 import './style.less'
 

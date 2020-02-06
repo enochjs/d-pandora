@@ -23,7 +23,7 @@ export interface ImperativeHandles {
   show(formValue: FormValue, type?: 'add' | 'edit'): void;
 }
 
-function addEdit(props: any, ref: React.Ref<ImperativeHandles>) {
+function addEdit (props: any, ref: React.Ref<ImperativeHandles>) {
   const treeData = [
     {
       title: 'Node1',
@@ -56,14 +56,14 @@ function addEdit(props: any, ref: React.Ref<ImperativeHandles>) {
   const [formValue, setFormValue] = useState({})
 
   useImperativeHandle(ref, () => ({
-    show(formValue: FormValue, type?: 'add' | 'edit') {
+    show (formValue: FormValue, type?: 'add' | 'edit') {
       setFormValue(formValue)
       setVisible(true)
       setType(type || 'add')
     },
   }))
 
-  function formFieldChange(value: any) {
+  function formFieldChange (value: any) {
     setFormValue({
       ...formValue,
       ...value,
@@ -71,11 +71,11 @@ function addEdit(props: any, ref: React.Ref<ImperativeHandles>) {
   }
 
 
-  function handleSave() {
+  function handleSave () {
     // todo
   }
 
-  function handleCancel() {
+  function handleCancel () {
     setVisible(false)
   }
 

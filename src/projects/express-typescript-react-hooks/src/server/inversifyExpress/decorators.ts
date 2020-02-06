@@ -2,14 +2,14 @@ import express from 'express'
 import interfaces from './interfaces'
 import { METADATA_KEY, PARAMETER_TYPE } from './constants'
 
-export function Controller(path: string, ...middleWares: interfaces.Middleware[]) {
+export function Controller (path: string, ...middleWares: interfaces.Middleware[]) {
   return function (target: any): void {
     const metadata = { target, path, middleWares }
     Reflect.defineMetadata(METADATA_KEY.controller, metadata, target)
   }
 }
 
-function Method(method: interfaces.METHOD_TYPE, path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
+function Method (method: interfaces.METHOD_TYPE, path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
   return function (target: any, methodName: string): void {
     const metadata: interfaces.ControllerMethodMetadata = {
       methodName,
@@ -28,27 +28,27 @@ function Method(method: interfaces.METHOD_TYPE, path: string, ...middleWares: in
   }
 }
 
-export function All(path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
+export function All (path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
   return Method('all', path, ...middleWares)
 }
 
-export function Get(path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
+export function Get (path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
   return Method('get', path, ...middleWares)
 }
 
-export function Post(path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
+export function Post (path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
   return Method('post', path, ...middleWares)
 }
 
-export function Put(path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
+export function Put (path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
   return Method('put', path, ...middleWares)
 }
 
-export function Delete(path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
+export function Delete (path: string, ...middleWares: interfaces.Middleware[]): interfaces.HandlerDecorator {
   return Method('delete', path, ...middleWares)
 }
 
-function Params(type: PARAMETER_TYPE, parameterName: string): ParameterDecorator {
+function Params (type: PARAMETER_TYPE, parameterName: string): ParameterDecorator {
   return function (target: any, methodName: string, index: number) {
     const metadata: interfaces.ParameterMetadata = {
       type,
@@ -71,7 +71,7 @@ function Params(type: PARAMETER_TYPE, parameterName: string): ParameterDecorator
   } as ParameterDecorator
 }
 
-function paramDecoratorFactory(type: PARAMETER_TYPE): (name?: string) => ParameterDecorator {
+function paramDecoratorFactory (type: PARAMETER_TYPE): (name?: string) => ParameterDecorator {
   return (name?: string): ParameterDecorator => Params(type, name || 'default')
 }
 
@@ -85,7 +85,7 @@ export const Cookies = paramDecoratorFactory(PARAMETER_TYPE.COOKIES)
 export const Session = paramDecoratorFactory(PARAMETER_TYPE.SESSION)
 export const Next = paramDecoratorFactory(PARAMETER_TYPE.NEXT)
 
-export function After(reducer: (result: any, req: express.Request, res: express.Response, next: express.RequestHandler) => void) {
+export function After (reducer: (result: any, req: express.Request, res: express.Response, next: express.RequestHandler) => void) {
   return function (target: any, methodName: string): void {
     if (methodName) {
       Reflect.defineMetadata(METADATA_KEY.controllerAfter, reducer, target.constructor, methodName)

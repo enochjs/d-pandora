@@ -6,7 +6,7 @@ import { PROJECT_TOKERN_NAME } from 'utils/constants'
 
 
 const Header = function () {
-  function handleLogout() {
+  function handleLogout () {
     localStorage.setItem(PROJECT_TOKERN_NAME, '')
     window.location.href = '/login'
   }

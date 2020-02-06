@@ -38,7 +38,6 @@ var templates = {};
 var flatten = function (arr) { return arr.reduce(function (pre, val) { return pre.concat(Array.isArray(val) ? flatten(val) : val); }, []); };
 var types = fs_1.default.readdirSync(path_1.default.resolve(__dirname, '../src/templates'));
 types.forEach(function (type) {
-    console.log('.....types', type);
     fileRecursive(path_1.default.resolve(__dirname, "../src/templates/" + type)).then(function (result) {
         var flattenResult = flatten(result);
         result = flattenResult.filter(function (item) { return item; });

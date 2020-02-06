@@ -1,7 +1,7 @@
 import { message } from 'antd'
 import { PROJECT_TOKERN_NAME } from 'utils/constants'
 
-function checkStatus(resp: Response) {
+function checkStatus (resp: Response) {
   if (resp.status === 302) {
     window.location.href = '/login'
   }
@@ -14,7 +14,7 @@ function checkStatus(resp: Response) {
   return resp
 }
 
-function mergeParams(params: any) {
+function mergeParams (params: any) {
   const token = localStorage.getItem(PROJECT_TOKERN_NAME)
   return {
     ...params,
@@ -28,7 +28,7 @@ function mergeParams(params: any) {
   }
 }
 
-function fetchData(url: string, params: any) {
+function fetchData (url: string, params: any) {
   const fetchparam = mergeParams(params)
   return fetch(url, fetchparam).then((resp) => checkStatus(resp))
 }

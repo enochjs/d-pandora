@@ -6,7 +6,7 @@ export default class UserService {
   @inject('Logger')
   private logger: Logger
 
-  public getUserList(id: number) {
+  public getUserList (id: number) {
     this.logger.info({ id })
     return { id }
   }

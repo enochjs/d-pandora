@@ -16,7 +16,7 @@ export interface IProps {
   data: IMenu[];
 }
 
-function MenuComponent(props: IProps) {
+function MenuComponent (props: IProps) {
   const { data } = props
   const history = useHistory()
 

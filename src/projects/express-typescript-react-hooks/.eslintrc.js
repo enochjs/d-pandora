@@ -57,19 +57,19 @@ module.exports = {
     "object-curly-newline": 0,
     "no-unused-expressions": 0,
     "react/jsx-one-expression-per-line": 0,
-    "no-plusplus": 0,
     "space-before-function-paren": ["error", "always"],
-    "padded-blocks": [2],
+    "import/extensions": 0,
+    "no-plusplus": 0,
   },
   "settings": {
     "react": {
       "version": "16.12.0"
     },
     'import/resolver': {
-    node: {
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      moduleDirectory: ['node_modules', 'src'],
-    },
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        moduleDirectory: ['node_modules', 'src/server', 'src/view'],
+      },
   },
   }
 };

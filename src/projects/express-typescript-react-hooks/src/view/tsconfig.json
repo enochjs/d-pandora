@@ -60,6 +60,8 @@
       "pages/*": ["pages/*"],
       "components/*": ["components/*"],
       "utils/*": ["utils/*"],
+      "api/*": ["api/*"],
+      "store/*": ["store/*"],
     },
     /* Experimental Options */
     "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. */

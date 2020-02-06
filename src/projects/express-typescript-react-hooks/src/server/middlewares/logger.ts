@@ -2,7 +2,7 @@ import { NextFunction, Request, Response } from 'express'
 import { container } from 'inversifyExpress/index'
 import { Logger } from 'winston'
 
-export default function accessLogger(req: Request, res: Response, next: NextFunction) {
+export default function accessLogger (req: Request, res: Response, next: NextFunction) {
   if (!req.path.includes('_next') && !req.path.includes('static')) {
     const startTime = Date.now()
     const logger = container.get<Logger>('Logger')

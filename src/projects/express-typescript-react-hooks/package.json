@@ -9,7 +9,7 @@
     "server": "NODE_ENV=localdev nodemon dist/index.js",
     "web": "webpack-dev-server --progress --config webpack/dev.js",
     "build": "webpack  --progress  --config webpack/prod.js",
-    "lint": "eslint './src/**/*.{ts,tsx}'",
+    "lint": "eslint './src/**/*.{ts,tsx}' --fix",
     "precommit-msg": "echo Pre-commit checking...please wait && exit 0"
   },
   "devDependencies": {
@@ -39,7 +39,7 @@
     "css-loader": "^3.2.0",
     "eslint": "^6.6.0",
     "eslint-config-airbnb": "^18.0.1",
-    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "file-loader": "^4.2.0",

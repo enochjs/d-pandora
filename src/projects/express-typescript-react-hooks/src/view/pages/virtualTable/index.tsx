@@ -18,11 +18,11 @@ const datalist = Array.from({ length: 1000 }).map((item: any, index: number) => 
   id: index,
 })))
 
-export default function table() {
+export default function table () {
   const tableRef = useRef<VirtualTableHandles>(null)
   const [scrollToRow, setScrollToRow] = useState()
 
-  function handleDetail(record: DataItem, index: number) {
+  function handleDetail (record: DataItem, index: number) {
     console.log('.....record', record, index, tableRef.current?.getSeletedRowKey())
   }
 
@@ -62,11 +62,11 @@ export default function table() {
     },
   ]
 
-  function handleFilter(e: any) {
+  function handleFilter (e: any) {
     tableRef.current?.filterData((item) => item.name.includes(e.target.value))
   }
 
-  function handleScroll(e: any) {
+  function handleScroll (e: any) {
     setScrollToRow(+e.target.value)
   }
 

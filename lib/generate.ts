@@ -45,7 +45,6 @@ const flatten: (arr: any[]) => string[] = (arr) => arr.reduce((pre, val) => pre.
 const types = fs.readdirSync(path.resolve(__dirname, '../src/templates'))
 
 types.forEach((type) => {
-  console.log('.....types', type)
   fileRecursive(path.resolve(__dirname, `../src/templates/${type}`)).then((result: any[]) => {
     const flattenResult = flatten(result)
     result = flattenResult.filter((item) => item)
