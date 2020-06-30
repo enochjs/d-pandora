@@ -23,6 +23,7 @@
   "devDependencies": {
     "@types/inquirer": "^6.5.0",
     "@types/ncp": "^2.0.3",
-    "@types/node": "^13.1.6"
+    "@types/node": "^13.1.6",
+    "typescript": "^3.9.5"
   }
 }
